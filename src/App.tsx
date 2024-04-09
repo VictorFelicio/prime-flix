@@ -1,12 +1,9 @@
+import RouteApp from './routes';
 
-
-function App() {
- 
-  return (
-    <>
-     <h1>Olá Mundo</h1>
-    </>
-  )
+export default function App() {
+    return (
+        <div>
+            <RouteApp />
+        </div>
+    );
 }
-
-export default App
