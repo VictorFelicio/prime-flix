@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Movies } from '../interfaces/MoviesInterface';
-import loadMovies from '../services/api/api-calls/load-movies';
+import { getMovies } from '../services/api/api-calls/get-movies';
 
-export default function useLoadMovies() {
+export function useLoadMovies() {
     const [movies, setMovies] = useState<Movies[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         async function fetchMovies() {
             try {
-                const moviesData = await loadMovies();
+                const moviesData = await getMovies();
                 setMovies(moviesData);
                 setIsLoading(false);
             } catch (error) {

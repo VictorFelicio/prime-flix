@@ -1,6 +1,6 @@
 import api from "../api";
 
-async function loadMovies() {
+export async function getMovies() {
     try {
         const response = await api.get('movie/now_playing', {
             params: {
@@ -9,11 +9,9 @@ async function loadMovies() {
                 page: 1,
             },
         });
-        return response.data.results
+        return response.data.results.slice(0,10)
     } catch (error) {
         console.error("Erro ao carregar os filmes",error);
         throw error;
     }
 }
-
-export default loadMovies

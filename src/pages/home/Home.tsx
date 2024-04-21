@@ -1,26 +1,30 @@
-import useLoadMovies from '../../hooks/useLoadMovies';
+import { Link } from 'react-router-dom';
+import {useLoadMovies} from '../../hooks/useLoadMovies';
+import './home.css';
 
-export default function Home() {
+export function Home() {
     const { movies, isLoading } = useLoadMovies();
 
     return (
-        <>
-            <h1>Home</h1>
-            {isLoading ? (
-                <p>Carregando...</p>
-            ) : (
-                <ul>
-                    {movies.map((movie) => (
-                        <li key={movie.overview}>
-                            <h3>{movie.title}</h3>
-                            <p>{movie.overview}</p>
-                            <p>
-                                <b>{movie.vote_average}</b>
-                            </p>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </>
+        <div className="container">
+            <div className="list-movies">
+                {isLoading ? (
+                    <p>Carregando...</p>
+                ) : (
+                    movies.map((movie) => {
+                        return (
+                            <article key={movie.id}>
+                                <strong>{movie.title}</strong>
+                                <img
+                                    src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                                    alt={movie.title}
+                                />
+                                <Link to={`/movie/${movie.id}`}>Acessar</Link>
+                            </article>
+                        );
+                    })
+                )}
+            </div>
+        </div>
     );
 }

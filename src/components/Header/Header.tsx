@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './header.css';
 import { messages } from './messages';
 
-export default function Header() {
+export function Header() {
     return (
         <header>
             <Link to="/" className="logo">
