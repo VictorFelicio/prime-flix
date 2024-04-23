@@ -11,7 +11,7 @@ export function RouteApp() {
             <Header/>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/filme/:id" element={<Movie />} />
+                <Route path="/movie/:id" element={<Movie />} />
                 <Route path='*' element={<Error/>}/>
             </Routes>
         </BrowserRouter>

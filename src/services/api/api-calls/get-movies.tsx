@@ -2,7 +2,7 @@ import api from "../api";
 
 export async function getMovies() {
     try {
-        const response = await api.get('movie/now_playing', {
+        const response = await api.get('/movie/now_playing', {
             params: {
                 api_key: import.meta.env.VITE_API_KEY_TMDB,
                 language: 'pt-BR',
