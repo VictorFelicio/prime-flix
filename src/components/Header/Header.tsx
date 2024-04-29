@@ -9,7 +9,7 @@ export function Header() {
             <Link to="/" className="logo">
                 {messages.logo}
             </Link>
-            <Link to="/" className="favorites">
+            <Link to="/favorites" className="favorites">
                 {messages.favorite}
             </Link>
         </header>

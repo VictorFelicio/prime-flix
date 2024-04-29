@@ -1,10 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useMovie } from '../../hooks/useMovie';
 import './movie.css';
+import { manageMovieLocalStore } from '../../util/manageMovieLocalStorage';
+import { actionManage } from '../../enum/actionManage';
+import { localStorageKey } from '../../constants/localStorageKey';
 
 export function Movie() {
     const { id } = useParams();
-    const { movie, isLoading } = useMovie(Number(id));
+    const { movie, isLoading, youtubeId } = useMovie(Number(id));
 
     if (isLoading) {
         return <div className="movie-info">Carregando...</div>;
@@ -12,7 +15,6 @@ export function Movie() {
     if (!movie) {
         return <div className="movie-info">Nao encontrado...</div>;
     }
-
     return (
         <div>
             {
@@ -28,9 +30,28 @@ export function Movie() {
                         Avaliação: {movie?.vote_average.toFixed(1)}/10
                     </strong>
                     <div className="area-buttons">
-                        <button>Salvar</button>
-                        <button>
-                            <a href="">Trailer</a>
+                        <button
+                            onClick={() =>
+                                manageMovieLocalStore(
+                                    localStorageKey,
+                                    movie,
+                                    actionManage.SAVE
+                                )
+                            }
+                        >
+                            Salvar
+                        </button>
+                        <button disabled={youtubeId === null ? true : false}>
+                            {youtubeId === null ? (
+                                <span>Trailer não disponivel</span>
+                            ) : (
+                                <a
+                                    href={`https://www.youtube.com/watch?v=${youtubeId}`}
+                                    target="blank"
+                                >
+                                    Trailer
+                                </a>
+                            )}
                         </button>
                     </div>
                 </div>

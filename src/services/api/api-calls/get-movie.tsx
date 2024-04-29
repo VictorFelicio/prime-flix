@@ -1,7 +1,7 @@
-import { Movie } from '../../../interfaces/MoviesInterface';
+import { MovieTypes } from '../../../interfaces/MoviesInterface';
 import api from '../api';
 
-export async function getMovie(id: number): Promise<Movie | null> {
+export async function getMovie(id: number): Promise<MovieTypes | null> {
     try {
         const response = await api.get(`/movie/${id}`, {
             params: {
