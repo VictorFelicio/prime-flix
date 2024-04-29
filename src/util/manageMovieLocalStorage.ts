@@ -6,7 +6,7 @@ export function manageMovieLocalStore(
     localStorageKey: string,
     movie: MovieTypes,
     action: ActionManage,
-    updateFavorites: (favorites: MovieTypes[]) => void
+    updateFavorites?: (favorites: MovieTypes[]) => void
 ) {
     const localMovies = localStorage.getItem(localStorageKey);
 
@@ -45,8 +45,9 @@ export function manageMovieLocalStore(
             savedMovies = savedMovies.filter((favoriteMovie) => {
                 return favoriteMovie.id !== movie.id;
             });
-
-            updateFavorites(savedMovies);
+            if (updateFavorites) {
+                updateFavorites(savedMovies);
+            }
             break;
 
         default:

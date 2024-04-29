@@ -16,9 +16,5 @@ export function useFavorites() {
         setFavorites(updatedFavorites);
     };
 
-    
-
     return { favorites, updateFavorites };
 }
-
-

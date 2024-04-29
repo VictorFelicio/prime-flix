@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
 }
 
@@ -34,7 +34,7 @@
     border-top-right-radius: 8px;
 }
 
-.list-movies a{
+.list-movies a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,5 +45,4 @@
     color: #fff;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-
 }

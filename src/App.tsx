@@ -1,4 +1,4 @@
-import {RouteApp} from './routes';
+import { RouteApp } from './routes';
 
 export default function App() {
     return (

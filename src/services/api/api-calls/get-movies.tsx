@@ -1,4 +1,4 @@
-import api from "../api";
+import api from '../api';
 
 export async function getMovies() {
     try {
@@ -9,9 +9,9 @@ export async function getMovies() {
                 page: 1,
             },
         });
-        return response.data.results.slice(0,10)
+        return response.data.results.slice(0, 10);
     } catch (error) {
-        console.error("Erro ao carregar os filmes",error);
+        console.error('Erro ao carregar os filmes', error);
         throw error;
     }
 }

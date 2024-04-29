@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Movie } from '../interfaces/MoviesInterface';
+import { MovieTypes } from '../interfaces/MoviesInterface';
 import { getMovies } from '../services/api/api-calls/get-movies';
 
 export function useLoadMovies() {
-    const [movies, setMovies] = useState<Movie[]>([]);
+    const [movies, setMovies] = useState<MovieTypes[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -15,8 +15,7 @@ export function useLoadMovies() {
             } catch (error) {
                 setIsLoading(false);
                 //TODO colocar um tratamento de erro da requisição da lista de filmes
-                console.log("Erro ao buscar filmes", error);
-                
+                console.log('Erro ao buscar filmes', error);
             }
         }
 

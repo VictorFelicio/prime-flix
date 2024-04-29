@@ -23,7 +23,6 @@ export function useMovie(id: number) {
         }
 
         fetchMovie();
-        
     }, [id]);
 
     return { movie, isLoading, youtubeId };

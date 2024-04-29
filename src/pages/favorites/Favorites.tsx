@@ -7,7 +7,7 @@ import './favorites.css';
 import { Link } from 'react-router-dom';
 
 export default function Favorites() {
-    const { favorites,updateFavorites } = useFavorites();
+    const { favorites, updateFavorites } = useFavorites();
 
     return (
         <div className="favorites-movies">

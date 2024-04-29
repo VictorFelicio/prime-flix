@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import {useLoadMovies} from '../../hooks/useLoadMovies';
+import { useLoadMovies } from '../../hooks/useLoadMovies';
 import './home.css';
 
 export function Home() {
