@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { MovieTypes } from '../interfaces/MoviesInterface';
 
 type ActionManage = 'SAVE' | 'REMOVE';
@@ -26,7 +27,7 @@ export function manageMovieLocalStore(
             );
 
             if (hasMovieSaved) {
-                alert('Filme já salvo');
+                toast.warn('Esse filme já está salvo em seus favoritos!');
                 return;
             }
             if (movie) {
@@ -35,7 +36,7 @@ export function manageMovieLocalStore(
                     localStorageKey,
                     JSON.stringify(savedMovies)
                 );
-                alert('Filme salvo');
+                toast.success('Filme salvo com sucesso em seus favoritos!');
                 return;
             }
 
@@ -48,6 +49,7 @@ export function manageMovieLocalStore(
             if (updateFavorites) {
                 updateFavorites(savedMovies);
             }
+            toast.info('Filme removido com sucesso dos seus favoritos!');
             break;
 
         default:

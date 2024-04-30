@@ -12,8 +12,8 @@ export function useFavorites() {
         localStorage.setItem(localStorageKey, JSON.stringify(favorites));
     }, [favorites]);
 
-    const updateFavorites = (updatedFavorites: MovieTypes[]) => {
-        setFavorites(updatedFavorites);
+    const updateFavorites = (newFavorites: MovieTypes[]) => {
+        setFavorites(newFavorites);
     };
 
     return { favorites, updateFavorites };
