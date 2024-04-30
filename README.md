@@ -1,30 +1,49 @@
-# React + TypeScript + Vite
+# Prime Flix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o projeto
 
-Currently, two official plugins are available:
+Prime Flix é um projeto React+ Vite que permite aos usuários pesquisar filmes e séries de TV utilizando a API da TMDB (The Movie Database). Ele exibe detalhes como título, descrição, avaliação e poster dos filmes encontrados.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+-   Pesquisa de filmes e séries de TV
+-   Exibição de detalhes dos filmes, incluindo título, descrição, avaliação e poster
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instalação
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone este repositório: `git clone https://github.com/VictorFelicio/prime-flix.git`
+2. Navegue até o diretório do projeto: `cd prime-flix`
+3. Instale as dependências: `npm install`
+4. Crie o arquivo `.env` e adicione sua chave de API da TMDB.
+5. Inicie o servidor de desenvolvimento: `npm run dev`
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Tecnologias Utilizadas
+
+<div style="display: flex; align-items: center">
+    - React <a style="margin-left: 10px"  href="https://skillicons.dev">
+      <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React" style="width: 20px; height: 20px;">
+    </a>
+</div>
+<div style="display: flex; align-items: center">
+    - Axios <a style="margin-left: 10px"  href="https://skillicons.dev">
+      <img src="https://skillicons.dev/icons?i=actix&theme=dark" alt="React" style="width: 20px; height: 20px;">
+    </a>
+</div>
+<div style="display: flex; align-items: center">
+    - API TMDB (The Movie Database) <a style="margin-left: 10px"  href="https://skillicons.dev">
+      <img src="https://skillicons.dev/icons?i=crystal&theme=dark" alt="React" style="width: 20px; height: 20px;">
+    </a>
+</div>
+<div style="display: flex; align-items: center">
+    - Typescript <a style="margin-left: 10px"  href="https://skillicons.dev">
+      <img src="https://skillicons.dev/icons?i=typescript&theme=dark" alt="React" style="width: 20px; height: 20px;">
+    </a>
+</div>
+
+## Configuração da Chave da API da TMDB
+
+Para utilizar a API da TMDB, é necessário obter uma chave de API. Você pode se registrar gratuitamente no [site da TMDB](https://www.themoviedb.org/) e obter sua chave de API. Depois de obter a chave, crie o arquivo `.env` no projeto:
+
+```javascript
+VITE_API_KEY_TMDB = 'SUA_CHAVE_DA_API_AQUI';
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
