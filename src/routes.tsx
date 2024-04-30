@@ -5,6 +5,7 @@ import { Movie } from './pages/movie/Movie';
 import { Header } from './components/Header/Header';
 import { Error } from './pages/error/Error';
 import Favorites from './pages/favorites/Favorites';
+import Footer from './components/Footer/Footer';
 
 export function RouteApp() {
     return (
@@ -16,6 +17,7 @@ export function RouteApp() {
                 <Route path="/favorites" element={<Favorites />} />
                 <Route path="*" element={<Error />} />
             </Routes>
+            <Footer/>
         </BrowserRouter>
     );
 }

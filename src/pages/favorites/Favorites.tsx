@@ -11,7 +11,7 @@ export default function Favorites() {
 
     return (
         <div className="favorites-movies">
-            <h1>Meus filmes</h1>
+            <h1>Meus Favoritos</h1>
             {favorites ? (
                 <ul>
                     {favorites?.map((movie: MovieTypes) => (

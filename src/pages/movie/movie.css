@@ -4,7 +4,8 @@
     flex-direction: column;
     max-width: 800px;
     padding: 0 8px;
-    margin: 0 auto;
+    margin: 0 auto;   
+    min-height: calc(100vh - 174px);
 }
 
 .movie-info h1 {
