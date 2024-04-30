@@ -1,6 +1,6 @@
 # Prime Flix
 
-## Sobre o projeto
+## Sobre o projeto  [Em construção 👷]
 
 Prime Flix é um projeto React+ Vite que permite aos usuários pesquisar filmes e séries de TV utilizando a API da TMDB (The Movie Database). Ele exibe detalhes como título, descrição, avaliação e poster dos filmes encontrados.
 
